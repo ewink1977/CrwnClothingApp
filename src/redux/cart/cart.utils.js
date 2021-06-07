@@ -19,6 +19,7 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
 		(cartItem) => cartItem.id === cartItemToRemove.id
 	);
 
+	// Clears item out of cart if quantity will be zero.
 	if (existingCartItem.quantity === 1) {
 		return cartItems.filter(
 			(cartItem) => cartItem.id !== cartItemToRemove.id
