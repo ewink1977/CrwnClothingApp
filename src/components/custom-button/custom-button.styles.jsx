@@ -16,11 +16,17 @@ const invertedButtonStyles = css`
 	background-color: white;
 	color: black;
 	border: 1px solid black;
+	width: 80%;
+	opacity: 0.7;
+	position: absolute;
+	top: 255px;
 
 	&:hover {
+		/* display: flex; */
 		background-color: black;
 		color: white;
 		border: none;
+		opacity: 0.85;
 	}
 `;
 
@@ -34,10 +40,26 @@ const googleSignInStyles = css`
 	}
 `;
 
+// const collectionPageStyles = css`
+// 	width: 80%;
+// 	opacity: 0.7;
+// 	position: absolute;
+// 	top: 255px;
+// 	display: none;
+
+// 	&:hover {
+// 		opacity: 0.85;
+// 		display: flex;
+// 	}
+// `;
+
 const getButtonStyles = (props) => {
 	if (props.isGoogleSignIn) {
 		return googleSignInStyles;
 	}
+	// if (props.isCollectionPage) {
+	// 	return collectionPageStyles;
+	// }
 
 	return props.inverted ? invertedButtonStyles : buttonStyles;
 };
